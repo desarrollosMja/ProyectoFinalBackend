@@ -1,0 +1,42 @@
+[
+  {
+    "id": 5,
+    "timestamp": 1635182878292,
+    "nombre": "Calculadora",
+    "descripcion": "Te calcula todo lo que quieras",
+    "codigo": "110",
+    "urlFoto": "https://maxihogar.vteximg.com.br/arquivos/ids/155466-1000-1000/Calculadora-Casio-LC-403TV.jpg?v=635603991040430000",
+    "precio": "2500",
+    "stock": "12"
+  },
+  {
+    "id": 7,
+    "timestamp": 1635979892740,
+    "nombre": "Bicicleta",
+    "descripcion": "Con esta vas a meter muchos goles",
+    "codigo": "500",
+    "urlFoto": "https://labicikleta.com/wp-content/uploads/2016/07/FeatureBiciMontana-770x513.jpg",
+    "precio": "10500",
+    "stock": "50"
+  },
+  {
+    "id": 8,
+    "timestamp": 1635979963345,
+    "nombre": "Calculadora",
+    "descripcion": "Te calcula todo lo que quieras",
+    "codigo": "430",
+    "urlFoto": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-128.png",
+    "precio": "2500",
+    "stock": "23"
+  },
+  {
+    "id": 9,
+    "timestamp": 1636030320368,
+    "nombre": "Calculadora",
+    "descripcion": "Te calcula todo lo que quieras",
+    "codigo": "90",
+    "urlFoto": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-128.png",
+    "precio": "325235",
+    "stock": "98"
+  }
+]
