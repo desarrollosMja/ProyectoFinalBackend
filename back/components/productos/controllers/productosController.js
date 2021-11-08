@@ -15,8 +15,8 @@ class ProductosController {
         try {
             let producto = await ProductosServices.createProducto(req)
             res.redirect("http://localhost:3000/productos")
-            //res.send({mensaje: "Producto cargado con éxito", productos: producto})
         } catch (error) {
+            res.json({ERROR: "No tiene autorización para acceder a esta ruta"})
             next(error)
         }
     }
@@ -33,8 +33,9 @@ class ProductosController {
     }
 
     async modifyProducto(req, res, next){
-        console.log("entré")
         try {
+            const respuesta = await ProductosServices.modifyProducto(req)
+            res.send(respuesta)
         } catch (error) {
             next(error)
         }

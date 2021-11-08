@@ -44,6 +44,26 @@ class ProductosServices{
             return {error: error}
         }
     }
+
+    async modifyProducto(req){
+        try {
+            this.productos = await manejador.getAll()
+            for (const producto of this.productos) {
+                if (producto.id == req.body.id) {
+                    producto.nombre = req.body.nombre
+                    producto.descripcion = req.body.descripcion
+                    producto.codigo = req.body.codigo
+                    producto.urlFoto = req.body.urlFoto
+                    producto.precio = req.body.precio
+                    producto.stock = req.body.stock
+                }
+            }
+            await manejador.save(this.productos)
+            return this.productos
+        } catch (error) {
+            return {error: error}
+        }
+    }
 }
 
 module.exports = new ProductosServices();

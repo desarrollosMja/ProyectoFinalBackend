@@ -10,33 +10,23 @@
     "stock": "12"
   },
   {
-    "id": 7,
-    "timestamp": 1635979892740,
-    "nombre": "Bicicleta",
-    "descripcion": "Con esta vas a meter muchos goles",
-    "codigo": "500",
-    "urlFoto": "https://labicikleta.com/wp-content/uploads/2016/07/FeatureBiciMontana-770x513.jpg",
-    "precio": "10500",
-    "stock": "50"
-  },
-  {
     "id": 8,
     "timestamp": 1635979963345,
-    "nombre": "Calculadora",
-    "descripcion": "Te calcula todo lo que quieras",
-    "codigo": "430",
-    "urlFoto": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-128.png",
-    "precio": "2500",
-    "stock": "23"
+    "nombre": "Bicicleta",
+    "descripcion": "La mejor bici del universo",
+    "codigo": "900",
+    "urlFoto": "https://labicikleta.com/wp-content/uploads/2016/07/FeatureBiciMontana-770x513.jpg",
+    "precio": "87000",
+    "stock": "4"
   },
   {
-    "id": 9,
-    "timestamp": 1636030320368,
-    "nombre": "Calculadora",
-    "descripcion": "Te calcula todo lo que quieras",
-    "codigo": "90",
-    "urlFoto": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-128.png",
-    "precio": "325235",
-    "stock": "98"
+    "id": 12,
+    "timestamp": 1636118553197,
+    "nombre": "Calculadora Científica",
+    "descripcion": "Es una calculadora premium",
+    "codigo": "950",
+    "urlFoto": "https://s1.eestatic.com/2019/10/03/actualidad/actualidad_433966707_134591512_854x640.jpg",
+    "precio": "7800",
+    "stock": "90"
   }
 ]

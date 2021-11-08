@@ -8,6 +8,7 @@ class Producto{
         this.urlFoto = urlFoto
         this.precio = precio
         this.stock = stock
+        this.addedToCart = 0
     }
 }
 

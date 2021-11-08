@@ -1,0 +1,148 @@
+[
+  {
+    "timestamp": 1636301714933,
+    "items": [
+      {
+        "id": 8,
+        "timestamp": 1635979963345,
+        "nombre": "Bicicleta",
+        "descripcion": "La mejor bici del universo",
+        "codigo": "900",
+        "urlFoto": "https://labicikleta.com/wp-content/uploads/2016/07/FeatureBiciMontana-770x513.jpg",
+        "precio": "87000",
+        "stock": "4",
+        "addedToCart": 1
+      },
+      {
+        "id": 12,
+        "timestamp": 1636118553197,
+        "nombre": "Calculadora Científica",
+        "descripcion": "Es una calculadora premium",
+        "codigo": "950",
+        "urlFoto": "https://s1.eestatic.com/2019/10/03/actualidad/actualidad_433966707_134591512_854x640.jpg",
+        "precio": "7800",
+        "stock": "90",
+        "addedToCart": 1
+      }
+    ],
+    "id": "c2842cd1-b711-4c4d-9a58-0bf4ce62e8da"
+  },
+  {
+    "timestamp": 1636301714933,
+    "items": [
+      {
+        "id": 12,
+        "timestamp": 1636118553197,
+        "nombre": "Calculadora Científica",
+        "descripcion": "Es una calculadora premium",
+        "codigo": "950",
+        "urlFoto": "https://s1.eestatic.com/2019/10/03/actualidad/actualidad_433966707_134591512_854x640.jpg",
+        "precio": "7800",
+        "stock": "90",
+        "addedToCart": 2
+      }
+    ],
+    "id": "522cafd4-4c0b-4afc-b940-f342238b8846"
+  },
+  {
+    "timestamp": 1636301714933,
+    "items": [
+      {
+        "id": 5,
+        "timestamp": 1635182878292,
+        "nombre": "Calculadora",
+        "descripcion": "Te calcula todo lo que quieras",
+        "codigo": "110",
+        "urlFoto": "https://maxihogar.vteximg.com.br/arquivos/ids/155466-1000-1000/Calculadora-Casio-LC-403TV.jpg?v=635603991040430000",
+        "precio": "2500",
+        "stock": "12",
+        "addedToCart": 1
+      },
+      {
+        "id": 12,
+        "timestamp": 1636118553197,
+        "nombre": "Calculadora Científica",
+        "descripcion": "Es una calculadora premium",
+        "codigo": "950",
+        "urlFoto": "https://s1.eestatic.com/2019/10/03/actualidad/actualidad_433966707_134591512_854x640.jpg",
+        "precio": "7800",
+        "stock": "90",
+        "addedToCart": 1
+      },
+      {
+        "id": 8,
+        "timestamp": 1635979963345,
+        "nombre": "Bicicleta",
+        "descripcion": "La mejor bici del universo",
+        "codigo": "900",
+        "urlFoto": "https://labicikleta.com/wp-content/uploads/2016/07/FeatureBiciMontana-770x513.jpg",
+        "precio": "87000",
+        "stock": "4",
+        "addedToCart": 1
+      }
+    ],
+    "id": "3eb50089-285d-420c-9185-b181390cafba"
+  },
+  {
+    "timestamp": 1636301714933,
+    "items": [
+      {
+        "id": 12,
+        "timestamp": 1636118553197,
+        "nombre": "Calculadora Científica",
+        "descripcion": "Es una calculadora premium",
+        "codigo": "950",
+        "urlFoto": "https://s1.eestatic.com/2019/10/03/actualidad/actualidad_433966707_134591512_854x640.jpg",
+        "precio": "7800",
+        "stock": "90",
+        "addedToCart": 1
+      },
+      {
+        "id": 5,
+        "timestamp": 1635182878292,
+        "nombre": "Calculadora",
+        "descripcion": "Te calcula todo lo que quieras",
+        "codigo": "110",
+        "urlFoto": "https://maxihogar.vteximg.com.br/arquivos/ids/155466-1000-1000/Calculadora-Casio-LC-403TV.jpg?v=635603991040430000",
+        "precio": "2500",
+        "stock": "12",
+        "addedToCart": 1
+      }
+    ],
+    "id": "7941767d-7a0a-49bf-bb99-4be7362e9eac"
+  },
+  {
+    "timestamp": 1636301714933,
+    "items": [
+      {
+        "id": 12,
+        "timestamp": 1636118553197,
+        "nombre": "Calculadora Científica",
+        "descripcion": "Es una calculadora premium",
+        "codigo": "950",
+        "urlFoto": "https://s1.eestatic.com/2019/10/03/actualidad/actualidad_433966707_134591512_854x640.jpg",
+        "precio": "7800",
+        "stock": "90",
+        "addedToCart": 3
+      }
+    ],
+    "id": "4318248a-2e72-43e6-b3fd-b5083004af45"
+  },
+  {
+    "timestamp": 1636319593375,
+    "items": [
+      {
+        "id": 8,
+        "timestamp": 1635979963345,
+        "nombre": "Bicicleta",
+        "descripcion": "La mejor bici del universo",
+        "codigo": "900",
+        "urlFoto": "https://labicikleta.com/wp-content/uploads/2016/07/FeatureBiciMontana-770x513.jpg",
+        "precio": "87000",
+        "stock": "4",
+        "addedToCart": 1
+      }
+    ],
+    "id": "03fec7f9-ab1c-4416-9df3-9725d2510931"
+  }
+]
