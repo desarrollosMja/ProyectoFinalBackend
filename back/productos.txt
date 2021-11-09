@@ -12,12 +12,12 @@
   {
     "id": 8,
     "timestamp": 1635979963345,
-    "nombre": "Bicicleta",
-    "descripcion": "La mejor bici del universo",
+    "nombre": "Mountain Bike",
+    "descripcion": "Vas a poder cruzar montañas como San Martín",
     "codigo": "900",
     "urlFoto": "https://labicikleta.com/wp-content/uploads/2016/07/FeatureBiciMontana-770x513.jpg",
-    "precio": "87000",
-    "stock": "4"
+    "precio": "109000",
+    "stock": "15"
   },
   {
     "id": 12,
@@ -28,5 +28,27 @@
     "urlFoto": "https://s1.eestatic.com/2019/10/03/actualidad/actualidad_433966707_134591512_854x640.jpg",
     "precio": "7800",
     "stock": "90"
+  },
+  {
+    "id": 13,
+    "timestamp": 1636464362976,
+    "nombre": "Pelota Adidas",
+    "descripcion": "Redonda como todas",
+    "codigo": "190",
+    "urlFoto": "https://static.dafiti.com.ar/p/adidas-3864-382794-1-product.jpg",
+    "precio": "6700",
+    "stock": "10",
+    "addedToCart": 0
+  },
+  {
+    "id": 14,
+    "timestamp": 1636464413716,
+    "nombre": "Botines azules",
+    "descripcion": "Si, son azules, ¿y qué?",
+    "codigo": "200",
+    "urlFoto": "https://http2.mlstatic.com/D_NQ_NP_658275-MLA45291003366_032021-W.jpg",
+    "precio": "8000",
+    "stock": "20",
+    "addedToCart": 0
   }
 ]

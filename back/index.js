@@ -14,3 +14,7 @@ app.use("/", express.static("views"))
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`))
 
 serverRoutes(app)
+
+app.get("*", (req, res)=>{
+    res.status(404).send(`Error: -2 ruta: ${req.path}, metodo: ${req.method}, no implementada`)
+})
