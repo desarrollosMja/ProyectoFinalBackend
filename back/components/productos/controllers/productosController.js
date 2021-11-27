@@ -5,6 +5,7 @@ class ProductosController {
     async getProductos(req, res, next) {
         try {
             let productos = await ProductosServices.getProductos(req)
+            console.log(productos)
             res.send(productos)
         } catch (error) {
             next(error)
@@ -35,6 +36,7 @@ class ProductosController {
     async modifyProducto(req, res, next){
         try {
             const respuesta = await ProductosServices.modifyProducto(req)
+            console.log("UPDATE:", respuesta)
             res.send(respuesta)
         } catch (error) {
             next(error)
