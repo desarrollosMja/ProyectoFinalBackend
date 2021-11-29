@@ -8,9 +8,7 @@ const crearProducto = async ({timestamp, nombre, descripcion, codigo, urlFoto, p
     let producto = { timestamp, nombre, descripcion, codigo, urlFoto, precio, stock, addedToCart}
 
     try {
-        conectarMongo()
         const nuevoProducto = await productoModel.create(producto)
-        await mongoose.disconnect()
     } catch (error) {
         console.log(error)
     }
@@ -52,7 +50,7 @@ const obtenerProductoPorID = async (_id) => {
 
 const borrarProducto = async (id) => {
     try {
-        const query = await productoModel.findOneAndDelete({id: id})
+        const query = await productoModel.findOneAndDelete({_id: id})
         console.log(query)
     } catch (error) {
         console.log(error)

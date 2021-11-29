@@ -14,7 +14,8 @@ class ProductosController {
 
     async createProducto(req, res, next){
         try {
-            let producto = await ProductosServices.createProducto(req)
+            const productos = await ProductosServices.createProducto(req)
+            //res.send(productos)
             res.redirect("http://localhost:3000/productos")
         } catch (error) {
             res.json({ERROR: "No tiene autorización para acceder a esta ruta"})
@@ -24,10 +25,8 @@ class ProductosController {
 
     async deleteProducto(req, res, next){
         try {
-            const respuesta = await ProductosServices.deleteProducto(req)
-            if (respuesta != false){
-                res.send({mensaje: "Producto eliminado con éxito", productos: respuesta})
-            } else res.send({mensaje: "No se pudo realizar la operación porque el ID no coincide con ningún producto cargado"})
+            const productos = await ProductosServices.deleteProducto(req)
+            res.send(productos)
         } catch (error) {
             next(error)
         }

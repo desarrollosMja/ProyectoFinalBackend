@@ -1,7 +1,5 @@
 const Producto = require("../productos")
 const { crearProducto, modificarProducto, obtenerProductos, obtenerProductoPorID, borrarProducto } = require("../model/productosModel")
-const Manejador = require("../../manejadores/manejadorArchivo")
-const manejador = new Manejador("productos.txt")
 
 class ProductosServices{
     constructor(){
@@ -28,7 +26,9 @@ class ProductosServices{
         try {
             let {nombre, descripcion, codigo, urlFoto, precio, stock} = req.body
             const nuevoProducto = new Producto(nombre, descripcion, codigo, urlFoto, precio, stock)
-            crearProducto(nuevoProducto)
+            await crearProducto(nuevoProducto)
+            const productos = await obtenerProductos()
+            return productos
         } catch (error) {
             return {error: error}
         }
@@ -36,7 +36,9 @@ class ProductosServices{
 
     async deleteProducto(req){
         try {
-            return manejador.deleteById(req.params.id)
+            await borrarProducto(req.params.id)
+            const productos = await obtenerProductos()
+            return productos
         } catch (error) {
             return {error: error}
         }
@@ -45,9 +47,8 @@ class ProductosServices{
     async modifyProducto(req){
         try {
             await modificarProducto(req.body._id, req.body)
-            const productoModificado = await obtenerProductoPorID(req.body._id)
-            console.log(productoModificado)
-            return productoModificado
+            const productos = await obtenerProductos()
+            return productos
         } catch (error) {
             return {error: error}
         }

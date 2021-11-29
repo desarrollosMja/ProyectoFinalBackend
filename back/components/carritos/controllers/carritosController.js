@@ -1,13 +1,11 @@
 const CarritosServices = require('../services/carritosServices');
-const { v4: uuidv4 } = require('uuid');
 
 class CarritosController{
 
     async createCarrito(req, res, next){
         try {
-            const idCarrito = uuidv4();
-            await CarritosServices.createCarrito(req.body, idCarrito);
-            res.json({idCarrito: idCarrito});
+            const idCarritoNuevo = await CarritosServices.createCarrito(req.body);
+            res.json({idCarrito: idCarritoNuevo});
         } catch (error) {
             next(error);
         }
