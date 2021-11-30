@@ -1,5 +1,5 @@
 let { Schema, model } = require("mongoose");
-let { mongoose, conectarMongo } = require("../../../daos/mongodb")
+let { mongoose, conectarMongo } = require("../../../utils/daos/mongodb")
 let { crearProductoSchema } = require("../schema/productosSchema")
 const productoSchema = new Schema(crearProductoSchema)
 const productoModel = model("producto", productoSchema)

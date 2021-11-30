@@ -1,0 +1,30 @@
+# Servidor para e-commerce
+## APIs
+- "Productos"
+- "Carritos"
+
+### PRODUCTOS
+#### Estructura de los objetos "productos"
+- Timestamp
+- Nombre
+- Descripcion
+- Codigo
+- URL de la foto
+- Precio
+- Stock
+- Cantidad agregada al carrito
+
+#### Rutas
+- /api/productos/:id? (Method: GET) --> Si no posee el ID retorna todos los productos, si lo posee retorna el producto correspondiente al ID
+- /api/productos/ (Method: POST) --> Para agregar un producto al listado
+- /api/productos/:id (Method: PUT) --> Para modificar los datos de un producto guardado
+- /api/productos/:id (Method: DELETE) --> Para borrar un producto
+
+### CARRITOS
+#### Rutas
+- /api/carrito/ (Method: POST) --> Crea el carrito y devuelve el ID del mismo
+- /api/carrito/:id (Method: DELETE) --> Elimina un carrito por su ID
+- /api/carrito/:id/productos (Method: GET) --> Devuelve un carrito
+- /api/carrito/:id/productos (Method: POST) --> Agrega un producto a un carrito ya creado
+- /api/carrito/:idCarrito/:idProducto (Method: POST) --> Agrega una unidad a un producto previamente agregado a un carrito
+- /api/carrito/:idCarrito/productos/:idProducto (Method: DELETE) --> Elimina un producto de un carrito
