@@ -4,6 +4,9 @@
 - "Carritos"
 
 ### PRODUCTOS
+#### Ubicación
+La base de datos de productos fue hecha en mongo, en la DB "Tienda" y la colección "Productos". Se exportó una copia al archivo "tiendaMongo.json".
+
 #### Estructura de los objetos "productos"
 - Timestamp
 - Nombre
@@ -21,6 +24,9 @@
 - /api/productos/:id (Method: DELETE) --> Para borrar un producto
 
 ### CARRITOS
+#### Ubicación
+La base de datos de "Carritos" fue realizada a través de Firebase, por lo tanto está alojada en la nube.
+
 #### Rutas
 - /api/carrito/ (Method: POST) --> Crea el carrito y devuelve el ID del mismo
 - /api/carrito/:id (Method: DELETE) --> Elimina un carrito por su ID
