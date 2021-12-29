@@ -1,6 +1,6 @@
 const { Router } = require("express")
 const router = Router()
-const login = require("../../utils/middlewares/login")
+const administrador = require("../../utils/middlewares/administrador")
 let ProductosController = require("./controllers/productosController")
 
 module.exports = (app) => {
@@ -8,9 +8,9 @@ module.exports = (app) => {
     
     router.get("/:id?", ProductosController.getProductos) //disponible para usuarios y administradores
 
-    router.post("/", login, ProductosController.createProducto) //disponible para administradores
+    router.post("/", administrador, ProductosController.createProducto) //disponible para administradores
 
-    router.put("/:id", login, ProductosController.modifyProducto) //disponible para administradores
+    router.put("/:id", administrador, ProductosController.modifyProducto) //disponible para administradores
 
-    router.delete("/:id", login, ProductosController.deleteProducto) //disponible para administradores
+    router.delete("/:id", administrador, ProductosController.deleteProducto) //disponible para administradores
 }

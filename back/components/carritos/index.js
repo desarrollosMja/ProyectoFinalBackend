@@ -1,6 +1,5 @@
 const { Router } = require("express")
 const router = Router()
-const login = require("../../utils/middlewares/login")
 let CarritosController = require("./controllers/carritosController")
 
 module.exports = (app) => {

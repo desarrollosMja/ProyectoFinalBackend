@@ -40,7 +40,6 @@ const obtenerProductos = async () => {
 
 const obtenerProductoPorID = async (_id) => {
     try {
-        console.log("Obtener producto por ID")
         const producto = await productoModel.findOne({_id: _id})
         return producto
     } catch (error) {
@@ -51,7 +50,7 @@ const obtenerProductoPorID = async (_id) => {
 const borrarProducto = async (id) => {
     try {
         const query = await productoModel.findOneAndDelete({_id: id})
-        console.log(query)
+        return query
     } catch (error) {
         console.log(error)
     }

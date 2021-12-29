@@ -4,12 +4,15 @@ const cors = require("cors")
 const { config } = require("./config")
 const path = require("path")
 const serverRoutes = require("./routes")
+const session = require("./utils/session")
 const PORT = config.PORT || "8080"
 
 app.use(express.json())
 app.use(cors(`${config.CORS}`))
 app.use(express.urlencoded({extended: true}))
 app.use("/", express.static("views"))
+app.use("/public", express.static("public"))
+app.use(session)
 
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`))
 
