@@ -5,7 +5,9 @@ class UsuariosController {
     async getUsuario(req, res, next) {
         try {
             let usuario = await UsuariosServices.getUsuario(req)
-            req.session.userName = usuario.nombre
+            if (usuario != null){
+                req.session.userName = usuario.nombre
+            }
             res.json(usuario)
         } catch (error) {
             next(error)
