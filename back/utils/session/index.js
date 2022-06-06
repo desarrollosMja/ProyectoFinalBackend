@@ -1,4 +1,4 @@
-require("dotenv").config()
+const { config } = require("../../config/index")
 const session = require("express-session")
 const MongoStore = require("connect-mongo")
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true}
@@ -6,12 +6,12 @@ const { v4: uuidv4 } = require('uuid');
 
 module.exports = session({
     store: MongoStore.create({
-        mongoUrl: process.env.MONGO_ATLAS_URI,
+        mongoUrl: config.MONGO_ATLAS_URI,
         advancedOptions
     }),
-    secret: "Ahhhhhhhhhhhhhhhhhhhh",
+    secret: config.SECRET_KEY,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     cookie:{
         maxAge: 1000 * 60
     },

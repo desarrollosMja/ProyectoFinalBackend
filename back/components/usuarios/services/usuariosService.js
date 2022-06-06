@@ -7,10 +7,24 @@ class UsuariosServices{
         try {
             await client.connect();
             const db = client.db(dbName);
-
             const col = db.collection("usuarios");
             const usuario = await col.findOne({email: req.body.email, password: req.body.password})
             return usuario
+        } catch (error) {
+            return {error: error}
+        }
+
+        finally {
+            await client.close()
+        }
+    }
+
+    async getByEmail(email){
+        try {
+            await client.connect();
+            const db = client.db(dbName);
+            const col = db.collection("usuarios");
+            return await col.findOne({email: email})
         } catch (error) {
             return {error: error}
         }
@@ -27,11 +41,11 @@ class UsuariosServices{
 
             const col = db.collection("usuarios");
 
-            let {nombre, edad, email, password, direccion, telefono, foto, tipoUsuario} = req.body
+            let {nombre, edad, email, password, direccion, prefijo, telefono, foto, tipoUsuario} = req.body
             const administrador = tipoUsuario == "si" ? true : false
-            const nuevoUsuario = new Usuario(nombre, edad, email, password, direccion, telefono, foto, administrador)
+            console.log(foto)
+            const nuevoUsuario = new Usuario(nombre, edad, email, password, direccion, prefijo, telefono, foto, administrador)
             const nuevoIngreso = await col.insertOne(nuevoUsuario);
-
             return nuevoUsuario
         } catch (error) {
             return {error: error}
@@ -56,37 +70,21 @@ class UsuariosServices{
         }
     }
 
-    async getSession(req,res){
+    async checkUsuario(email){
         try {
-            if (req.session.userName){
-                return req.session.userName
-            }else{
-                return null
-            }
+            await client.connect();
+            const db = client.db(dbName);
+            const col = db.collection("usuarios");
+            const usuario = await col.findOne({email: email})
+            return usuario
         } catch (error) {
             return {error: error}
         }
+
+        finally {
+            await client.close()
+        }
     }
-
-    // async deleteProducto(req){
-    //     try {
-    //         await borrarProducto(req.params.id)
-    //         const productos = await obtenerProductos()
-    //         return productos
-    //     } catch (error) {
-    //         return {error: error}
-    //     }
-    // }
-
-    // async modifyProducto(req){
-    //     try {
-    //         await modificarProducto(req.body._id, req.body)
-    //         const productos = await obtenerProductos()
-    //         return productos
-    //     } catch (error) {
-    //         return {error: error}
-    //     }
-    // }
 }
 
 module.exports = new UsuariosServices();

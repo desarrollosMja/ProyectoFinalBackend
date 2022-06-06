@@ -5,23 +5,28 @@ class UsuariosController {
     async getUsuario(req, res, next) {
         try {
             let usuario = await UsuariosServices.getUsuario(req)
-            if (usuario != null){
-                req.session.userName = usuario.nombre
-            }
             res.json(usuario)
         } catch (error) {
-            next(error)
+            res.json({error: error})
+        }
+    }
+
+    async getByEmail(req,res){
+        try {
+            let usuario = await UsuariosServices.getByEmail(req.params.email)
+            res.json({session: true, usuario: usuario})
+        } catch (error) {
+            res.json({session: false})
         }
     }
 
     async createUsuario(req, res, next){
         try {
+            console.log("entré a Users controller")
             const usuario = await UsuariosServices.createUsuario(req)
-            req.session.userName = usuario.nombre
             res.json(usuario)
         } catch (error) {
             res.json({ERROR: "No tiene autorización para acceder a esta ruta"})
-            next(error)
         }
     }
 
@@ -30,36 +35,9 @@ class UsuariosController {
             const foto = await UsuariosServices.guardarFoto(req, res, next)
             res.send(foto)
         } catch (error) {
-            console.log("Error en Usuarios Controler: ", error)       
+            res.json({error: error})      
         }
     }
-
-    async getSession(req,res,next){
-        try {
-            const session = await UsuariosServices.getSession(req,res)
-            res.json(session)
-        } catch (error) {
-            next(error)
-        }
-    }
-    // async deleteProducto(req, res, next){
-    //     try {
-    //         const productos = await ProductosServices.deleteProducto(req)
-    //         res.send(productos)
-    //     } catch (error) {
-    //         next(error)
-    //     }
-    // }
-
-    // async modifyProducto(req, res, next){
-    //     try {
-    //         const respuesta = await ProductosServices.modifyProducto(req)
-    //         console.log("UPDATE:", respuesta)
-    //         res.send(respuesta)
-    //     } catch (error) {
-    //         next(error)
-    //     }
-    // }
 }
 
 module.exports = new UsuariosController();
