@@ -1,5 +1,6 @@
 const Usuario = require("../usuarios")
-const { client, dbName } = require("../../../utils/daos/mongoAtlas")
+const { client, dbName } = require("../../../daos/mongoAtlasUsuarios")
+let bcrypt = require("bcryptjs")
 
 class UsuariosServices{
 
@@ -8,7 +9,10 @@ class UsuariosServices{
             await client.connect();
             const db = client.db(dbName);
             const col = db.collection("usuarios");
-            const usuario = await col.findOne({email: req.body.email, password: req.body.password})
+            const usuario = await col.findOne({email: req.body.email})
+            if (usuario == null) return undefined
+            const check_pass = bcrypt.compareSync(req.body.password, usuario.password)
+            if (check_pass == false) return undefined
             return usuario
         } catch (error) {
             return {error: error}
@@ -42,10 +46,10 @@ class UsuariosServices{
             const col = db.collection("usuarios");
 
             let {nombre, edad, email, password, direccion, prefijo, telefono, foto, tipoUsuario} = req.body
+            let hash = bcrypt.hashSync(password, 8);
             const administrador = tipoUsuario == "si" ? true : false
-            console.log(foto)
-            const nuevoUsuario = new Usuario(nombre, edad, email, password, direccion, prefijo, telefono, foto, administrador)
-            const nuevoIngreso = await col.insertOne(nuevoUsuario);
+            const nuevoUsuario = new Usuario(nombre, edad, email, hash, direccion, prefijo, telefono, foto, administrador)
+            await col.insertOne(nuevoUsuario);
             return nuevoUsuario
         } catch (error) {
             return {error: error}
@@ -66,23 +70,7 @@ class UsuariosServices{
             }
             return file
         } catch (error) {
-            console.log("Error en Usuarios Services", error)
-        }
-    }
-
-    async checkUsuario(email){
-        try {
-            await client.connect();
-            const db = client.db(dbName);
-            const col = db.collection("usuarios");
-            const usuario = await col.findOne({email: email})
-            return usuario
-        } catch (error) {
             return {error: error}
-        }
-
-        finally {
-            await client.close()
         }
     }
 }

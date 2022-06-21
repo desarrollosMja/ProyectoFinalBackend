@@ -2,54 +2,47 @@ const { Router } = require("express")
 const router = Router()
 const upload = require("../../utils/middlewares/multer")
 let UsuariosController = require("./controller/usuariosController")
-const textUsuarioYaRegistrado = "Email ya registrado!"
-const textUsuarioInexistente = "Datos incorrectos!"
+const { generateToken, auth } = require("../../utils/JWT")
+const logger = require("../../utils/loggers/winston")
 
-let isLogin = (req, res, next)=>{
-    try {
-        console.log(req.session)
-        if(req.isAuthenticated()){
-            next()
-        }else{
-            res.json({session: false})
-        }
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-let isNotLogin = (req, res, next)=>{
-    try {
-        if(!req.isAuthenticated()){
-            next()
-        }else{
-            res.redirect(`${config.FRONT_URI}/productos`)
-        }
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-module.exports = (app,passport) => {
+module.exports = (app) => {
     app.use("/api/usuarios", router)
-    
-    //router.post("/nuevo", UsuariosController.createUsuario)
 
-    router.post("/guardar-foto", upload.single("foto"), UsuariosController.guardarFoto)
-
-    //router.post("/", UsuariosController.getUsuario)
-
-    router.post("/nuevo",  passport.authenticate('register', {failureRedirect:`/api/usuarios/error/${textUsuarioYaRegistrado}`}), (req,res,next) => {
-        res.json(req.body)
-    });
-
-    router.post("/", passport.authenticate('login', {failureRedirect:`/api/usuarios/error/${textUsuarioInexistente}`}), (req,res,next) => {       
-        res.json(req.user)
-    });
-
-    router.get("/error/:errorMessage", (req,res,next) => {
-        res.render("error", {error: req.params.errorMessage})
+    //rutas GET
+    router.get("/verify-token", auth, (req,res,next) => {
+        logger.debug(`Token verificado con éxito. Ruta: ${req.path}`)
+        res.json({session: true, user: {id: req.user._id, nombre: req.user.nombre, foto: req.user.foto, administrador: req.user.administrador}})
     })
 
-    router.get("/check-session/:email", isLogin, UsuariosController.getByEmail)
+    //rutas POST
+    router.post("/guardar-foto", upload.single("foto"), UsuariosController.guardarFoto)
+
+    router.post("/nuevo", async (req,res,next) => {
+        const { nombre, edad, email, password, direccion, prefijo, telefono, foto, tipoUsuario } = req.body
+
+        const usuario = await UsuariosController.getByEmail(req,res)
+        if (usuario.existe == true) {
+            logger.warn(`El usuario ya existe. USER: ${usuario}`)
+            return res.json({error: "El usuario ya existe!"})
+        }
+
+        await UsuariosController.createUsuario(req,res,next)
+
+        const user = { nombre, edad, email, password, direccion, prefijo, telefono, foto, tipoUsuario }
+        const access_token = generateToken(user)
+        logger.debug(`Usuario creado con éxito. USER: ${JSON.stringify(user)}`)
+        res.json({token: access_token, user: user})
+    });
+
+    router.post("/", async (req,res,next) => {       
+        const user = await UsuariosController.getUsuario(req,res,next)
+        if (!user) {
+            logger.warn(`El usuario no existe. USER: ${req.body}`)
+            return res.json({token: null})
+        }
+
+        const access_token = generateToken(user)
+        logger.debug(`Acceso exitoso. USER: ${JSON.stringify(user)}`)
+        res.json({token: access_token, user: user})
+    });
 }

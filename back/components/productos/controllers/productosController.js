@@ -16,7 +16,6 @@ class ProductosController {
             const productos = await ProductosServices.createProducto(req)
             res.redirect("http://localhost:3000/productos")
         } catch (error) {
-            res.json({ERROR: "No tiene autorización para acceder a esta ruta"})
             next(error)
         }
     }

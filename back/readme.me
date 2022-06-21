@@ -2,6 +2,7 @@
 ## APIs
 - "Productos"
 - "Carritos"
+- "Usuarios"
 
 ### PRODUCTOS
 #### Ubicación
@@ -34,3 +35,25 @@ La base de datos de "Carritos" fue realizada a través de Firebase, por lo tanto
 - /api/carrito/:id/productos (Method: POST) --> Agrega un producto a un carrito ya creado
 - /api/carrito/:idCarrito/:idProducto (Method: POST) --> Agrega una unidad a un producto previamente agregado a un carrito
 - /api/carrito/:idCarrito/productos/:idProducto (Method: DELETE) --> Elimina un producto de un carrito
+
+### USUARIOS
+#### Ubicación
+La base de datos fue realizada con MongoDB y alojada en la nube a través de Mongo Atlas.
+
+#### Estructura de los objetos "usuarios"
+ - Nombre
+ - Edad
+ - Email
+ - Password
+ - Dirección
+ - Prefijo telefónico
+ - Teléfono
+ - Foto / Avatar
+ - Administrador o cliente
+
+#### Rutas
+ - /api/usuarios/ (Method: POST) --> Sistema de login. El usuario envía por body email y password y si los datos son correctos se devuelve el token de sesión.
+ - /api/usuarios/nuevo (Method: POST) --> Sistema de registro. El usuario carga todos sus datos, ellos son guardados en la DB y se devuelve el token de sesión.
+ - /api/usuarios/guardar-foto (Method: POST) --> Se utiliza para que a través del middleware multer se pueda subir la foto de avatar a la carpeta public/avatares.
+ - /api/usuarios/verify-token (Method: GET) --> A través de él el front puede verificar si la sesión está activa, enviando el token y comparándolo con el existente en JWT.
+ 

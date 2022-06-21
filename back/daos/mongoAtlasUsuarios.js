@@ -1,9 +1,8 @@
 const { MongoClient } = require("mongodb");
-require("dotenv").config()
+const { config } = require("../config")
 
-const url = process.env.MONGO_ATLAS_URI;
+const url = config.MONGO_ATLAS_URI_USUARIOS;
 const client = new MongoClient(url);
 const dbName = "Usuarios";
-
 
 module.exports = { client, dbName };

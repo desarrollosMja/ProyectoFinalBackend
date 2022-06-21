@@ -5,7 +5,7 @@ class UsuariosController {
     async getUsuario(req, res, next) {
         try {
             let usuario = await UsuariosServices.getUsuario(req)
-            res.json(usuario)
+            return usuario
         } catch (error) {
             res.json({error: error})
         }
@@ -13,8 +13,9 @@ class UsuariosController {
 
     async getByEmail(req,res){
         try {
-            let usuario = await UsuariosServices.getByEmail(req.params.email)
-            res.json({session: true, usuario: usuario})
+            let usuario = await UsuariosServices.getByEmail(req.body.email)
+            if (!usuario) return {existe: false}
+            return {existe: true, usuario: usuario}
         } catch (error) {
             res.json({session: false})
         }
@@ -22,9 +23,8 @@ class UsuariosController {
 
     async createUsuario(req, res, next){
         try {
-            console.log("entré a Users controller")
             const usuario = await UsuariosServices.createUsuario(req)
-            res.json(usuario)
+            return usuario
         } catch (error) {
             res.json({ERROR: "No tiene autorización para acceder a esta ruta"})
         }

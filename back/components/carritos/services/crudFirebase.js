@@ -1,4 +1,4 @@
-const { db } = require("../../../utils/daos/firebase")
+const { db } = require("../../../daos/firebase")
 let carritos = db.collection("carritos")
 
 const crearCarrito = async (data) => {
