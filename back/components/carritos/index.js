@@ -16,4 +16,6 @@ module.exports = (app) => {
     router.post("/:cid/:pid", CarritosController.addUnidad) //Agregar unidad a producto previamente agregado a un carrito
 
     router.delete("/:cid/products/:pid", CarritosController.deleteProducto) //Eliminar producto de un carrito por ID
+
+    router.post("/new-operation", CarritosController.newOperation) //Gestiona la compra de los productos en el carrito
 }

@@ -1,4 +1,5 @@
 const dotenv = require('dotenv').config();
+const args = process.argv.slice(2)
 
 let config = {
   NODE_ENV: process.env.NODE_ENV || 'development',
@@ -10,8 +11,10 @@ let config = {
   FRONT_URI: process.env.FRONT_URI,
   MONGO_DB_URI: process.env.MONGO_DB_URI,
   DB_NAME: process.env.DB_NAME,
-  SERVER_MODE: process.env.SERVER_MODE,
-  JWT_PRIVATE_KEY: process.env.JWT_PRIVATE_KEY
+  SERVER_MODE: args[0] || process.env.SERVER_MODE,
+  JWT_PRIVATE_KEY: process.env.JWT_PRIVATE_KEY,
+  EMAIL_ADDRESS: process.env.EMAIL_ADDRESS,
+  EMAIL_PASSWORD: process.env.EMAIL_PASSWORD
 }
 
 module.exports = { config };

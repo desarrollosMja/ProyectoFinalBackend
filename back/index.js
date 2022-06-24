@@ -26,7 +26,7 @@ if (config.SERVER_MODE == "cluster"){
     } else {
         app.listen(config.PORT, () => logger.silly(`Worker on http://localhost:${config.PORT} - Worker PID: ${process.pid}`))
     }
-} else{
+} else if (config.SERVER_MODE == "fork"){
     app.listen(config.PORT, () => logger.silly(`Fork server on http://localhost:${config.PORT}`, " - Process PID: ", process.pid))
 }
 
