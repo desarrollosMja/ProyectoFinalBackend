@@ -2,6 +2,7 @@ const CarritosServices = require('../services/carritosServices')
 const { nodemailerTransporter } = require("../../../utils/nodemailer")
 const { config } = require("../../../config")
 const logger = require("../../../utils/loggers/winston")
+const { sendPedidoCreado, sendConfirmacionAdministrador } = require("../../../utils/Twilio")
 
 class CarritosController{
 
@@ -76,7 +77,18 @@ class CarritosController{
                 `
             })
             logger.debug(info)
-            if (info.accepted.length > 0) return res.json({success: true})
+            if (info.accepted.length > 0) {
+                sendPedidoCreado(req.body.user.telefono)
+                sendConfirmacionAdministrador({
+                    user: {
+                        nombre: req.body.user.nombre, 
+                        email: req.body.user.email
+                    },
+                    carrito: req.body.carrito,
+                    total: req.body.total
+                })
+                return res.json({success: true})
+            }
             res.json({success: false})
         } catch (error) {
             res.json({error: error})

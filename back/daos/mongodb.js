@@ -9,7 +9,6 @@ let connection = null;
 const conectarMongo = async () => {
     try {
         connection = await mongoose.connect(`${MONGO_DB}${DB_NAME}`)
-        logger.debug("Conexión con Mongo establecida con éxito!")
     } catch (error) {
         logger.error(error)
     }

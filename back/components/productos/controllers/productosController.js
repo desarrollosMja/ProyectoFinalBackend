@@ -1,4 +1,5 @@
 let ProductosServices = require("../services/productosService")
+const { config } = require("../../../config")
 
 class ProductosController {
 
@@ -14,7 +15,7 @@ class ProductosController {
     async createProducto(req, res, next){
         try {
             const productos = await ProductosServices.createProducto(req)
-            res.redirect("http://localhost:3000/productos")
+            res.redirect(`http://localhost:${config.FRONT_PORT}/productos`)
         } catch (error) {
             next(error)
         }

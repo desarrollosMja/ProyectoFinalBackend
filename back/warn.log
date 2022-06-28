@@ -69,3 +69,52 @@
 {"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
 {"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
 {"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"code":21211,"level":"error","moreInfo":"https://www.twilio.com/docs/errors/21211","status":400}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"warn","message":"Token inválido"}
+{"level":"warn","message":"Token inválido"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"warn","message":"El usuario no existe. USER: [object Object]"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"warn","message":"Token inválido"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"warn","message":"Token inválido"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /favicon.ico, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /favicon.ico, metodo: GET"}
+{"level":"error","message":"connect ECONNREFUSED 127.0.0.1:27017","reason":{"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"servers":{},"stale":false,"type":"Unknown"}}
+{"level":"error","message":"connect ECONNREFUSED 127.0.0.1:27017","reason":{"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"servers":{},"stale":false,"type":"Unknown"}}
+{"level":"error","message":"connect ECONNREFUSED 127.0.0.1:27017","reason":{"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"servers":{},"stale":false,"type":"Unknown"}}
+{"level":"error","message":"connect ECONNREFUSED 127.0.0.1:27017","reason":{"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"servers":{},"stale":false,"type":"Unknown"}}
+{"level":"error","message":"connect ECONNREFUSED 127.0.0.1:27017","reason":{"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"servers":{},"stale":false,"type":"Unknown"}}
+{"level":"error","message":"connect ECONNREFUSED 127.0.0.1:27017","reason":{"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"servers":{},"stale":false,"type":"Unknown"}}
+{"level":"error","message":"connect ECONNREFUSED 127.0.0.1:27017","reason":{"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"servers":{},"stale":false,"type":"Unknown"}}
+{"level":"error","message":"connect ECONNREFUSED 127.0.0.1:27017","reason":{"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"servers":{},"stale":false,"type":"Unknown"}}
+{"level":"error","message":"connect ECONNREFUSED 127.0.0.1:27017","reason":{"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"servers":{},"stale":false,"type":"Unknown"}}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /favicon.ico, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error"}
+{"code":21211,"level":"error","moreInfo":"https://www.twilio.com/docs/errors/21211","status":400}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error"}
+{"code":21211,"level":"error","moreInfo":"https://www.twilio.com/docs/errors/21211","status":400}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"code":21211,"level":"error","moreInfo":"https://www.twilio.com/docs/errors/21211","status":400}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}
+{"level":"error","message":"Ruta inválida: /public/avatares/undefined, metodo: GET"}

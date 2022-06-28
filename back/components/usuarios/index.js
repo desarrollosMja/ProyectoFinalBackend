@@ -13,7 +13,17 @@ module.exports = (app) => {
     //rutas GET
     router.get("/verify-token", auth, (req,res,next) => {
         logger.debug(`Token verificado con éxito. Ruta: ${req.path}`)
-        res.json({session: true, user: {id: req.user._id, nombre: req.user.nombre, email: req.user.email, foto: req.user.foto, administrador: req.user.administrador}})
+        res.json({session: true, 
+                  user: {
+                    id: req.user._id, 
+                    nombre: req.user.nombre, 
+                    email: req.user.email, 
+                    foto: req.user.foto, 
+                    administrador: req.user.administrador, 
+                    prefijo: req.user.prefijo, 
+                    telefono: req.user.telefono
+                  }
+                })
     })
 
     //rutas POST

@@ -28,6 +28,9 @@ if (config.SERVER_MODE == "cluster"){
     }
 } else if (config.SERVER_MODE == "fork"){
     app.listen(config.PORT, () => logger.silly(`Fork server on http://localhost:${config.PORT}`, " - Process PID: ", process.pid))
+} else {
+    logger.debug("No ha ingresado un modo de ejecución de servidor válido (FORK o CLUSTER)")
+    process.exit()
 }
 
 serverRoutes(app)
