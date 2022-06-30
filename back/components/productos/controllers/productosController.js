@@ -15,7 +15,7 @@ class ProductosController {
     async createProducto(req, res, next){
         try {
             const productos = await ProductosServices.createProducto(req)
-            res.redirect(`http://localhost:${config.FRONT_PORT}/productos`)
+            res.redirect(`http://${config.FRONT_URI}/productos`)
         } catch (error) {
             next(error)
         }
