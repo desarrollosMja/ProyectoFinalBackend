@@ -1,7 +1,6 @@
 const Producto = require("../productos")
 const { clientProductos , dbNameProductos } = require("../../../daos/mongoAtlasProductos")
 const { ObjectId } = require('mongodb');
-//const { crearProducto, modificarProducto, obtenerProductos, obtenerProductoPorID, borrarProducto } = require("../model/productosModel")
 
 class ProductosServices{
     async getProductos(req){
