@@ -11,6 +11,7 @@ let config = {
   SECRET_KEY: process.env.SECRET_KEY,
   FRONT_URI: process.env.FRONT_URI,
   MONGO_DB_URI: process.env.MONGO_DB_URI,
+  MONGO_ATLAS_URI_PRODUCTOS: process.env.MONGO_ATLAS_URI_PRODUCTOS,
   DB_NAME: process.env.DB_NAME,
   SERVER_MODE: args.mode || "fork",
   JWT_PRIVATE_KEY: process.env.JWT_PRIVATE_KEY,

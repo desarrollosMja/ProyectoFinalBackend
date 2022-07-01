@@ -9,6 +9,7 @@ class UsuariosServices{
             await client.connect();
             const db = client.db(dbName);
             const col = db.collection("usuarios");
+
             const usuario = await col.findOne({email: req.body.email})
             if (usuario == null) return undefined
             const check_pass = bcrypt.compareSync(req.body.password, usuario.password)
