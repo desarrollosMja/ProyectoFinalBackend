@@ -1,5 +1,6 @@
 let ProductosServices = require("../services/productosService")
 const { config } = require("../../../config")
+const logger = require("../../../utils/loggers/winston")
 
 class ProductosController {
 

@@ -1,5 +1,5 @@
 const { MongoClient } = require("mongodb");
-const { config } = require("../config")
+const { config } = require("../../../../../config")
 
 const url = config.MONGO_ATLAS_URI_PRODUCTOS;
 const clientProductos = new MongoClient(url);

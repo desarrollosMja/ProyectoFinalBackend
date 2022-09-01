@@ -15,7 +15,7 @@ app.use("/public", express.static(path.join(__dirname,"/public")))
 
 if (config.SERVER_MODE == "cluster"){
     if (cluster.isMaster){
-        logger.silly(`Master server on PORT ${config.PORT} with PID ${process.pid}`)
+        logger.silly(`Master server on PORT ${config.PORT} with PID ${process.pid} - Working in ${config.NODE_ENV} mode.`)
         for (let i = 0; i < cpus; i++) {
             cluster.fork()
         }
@@ -27,7 +27,7 @@ if (config.SERVER_MODE == "cluster"){
         app.listen(config.PORT, () => logger.silly(`Worker on http://localhost:${config.PORT} - Worker PID: ${process.pid}`))
     }
 } else if (config.SERVER_MODE == "fork"){
-    app.listen(config.PORT, () => logger.silly(`Fork server on http://localhost:${config.PORT}`, " - Process PID: ", process.pid))
+    app.listen(config.PORT, () => logger.silly(`Fork server on http://localhost:${config.PORT}`, " - Process PID: ", process.pid, ` Working in ${config.NODE_ENV} mode.`))
 } else {
     logger.debug("No ha ingresado un modo de ejecución de servidor válido (FORK o CLUSTER)")
     process.exit()

@@ -1,5 +1,6 @@
 # Servidor para e-commerce
 Para iniciar el servidor es necesario colocar un parámetro --mode que puede ser "cluster" o "fork".
+La persistencia dependerá de si trabajamos en desarrollo o producción, de tal manera que en el primer caso se realiza localmente mientras que en el segundo  se hace en la nube.
 
 ## APIs
 - "Productos"
@@ -8,7 +9,8 @@ Para iniciar el servidor es necesario colocar un parámetro --mode que puede ser
 
 ### PRODUCTOS
 #### Ubicación
-La base de datos de productos fue hecha en mongo, en la DB "Tienda" y la colección "Productos". Se exportó una copia al archivo "tiendaMongo.json".
+La base de datos local de productos fue hecha en mongo, en la DB "Tienda" y la colección "Productos".
+La base de datos cloud de productos fue hecha en Mongo Atlas, en la DB "Productos" y la colección "productos".
 
 #### Estructura de los objetos "productos"
 - Timestamp
@@ -21,26 +23,29 @@ La base de datos de productos fue hecha en mongo, en la DB "Tienda" y la colecci
 - Cantidad agregada al carrito
 
 #### Rutas
-- /api/productos/:id? (Method: GET) --> Si no posee el ID retorna todos los productos, si lo posee retorna el producto correspondiente al ID
-- /api/productos/ (Method: POST) --> Para agregar un producto al listado
-- /api/productos/:id (Method: PUT) --> Para modificar los datos de un producto guardado
-- /api/productos/:id (Method: DELETE) --> Para borrar un producto
+- /api/products/:pid? (Method: GET) --> Si no posee el ID retorna todos los productos, si lo posee retorna el producto correspondiente al ID
+- /api/products/ (Method: POST) --> Para agregar un producto al listado
+- /api/products/:pid (Method: PUT) --> Para modificar los datos de un producto guardado
+- /api/products/:pid (Method: DELETE) --> Para borrar un producto
 
 ### CARRITOS
 #### Ubicación
-La base de datos de "Carritos" fue realizada a través de Firebase, por lo tanto está alojada en la nube.
+La base de datos local de carritos fue hecha en mongo, en la DB "Tienda" y la colección "Carritos".
+La base de datos cloud de cartitos fue hecha en Mongo Atlas, en la DB "Carritos" y la colección "carritos".
 
 #### Rutas
-- /api/carrito/ (Method: POST) --> Crea el carrito y devuelve el ID del mismo
-- /api/carrito/:id (Method: DELETE) --> Elimina un carrito por su ID
-- /api/carrito/:id/productos (Method: GET) --> Devuelve un carrito
-- /api/carrito/:id/productos (Method: POST) --> Agrega un producto a un carrito ya creado
-- /api/carrito/:idCarrito/:idProducto (Method: POST) --> Agrega una unidad a un producto previamente agregado a un carrito
-- /api/carrito/:idCarrito/productos/:idProducto (Method: DELETE) --> Elimina un producto de un carrito
+- /api/carts/ (Method: POST) --> Crea el carrito y devuelve el ID del mismo
+- /api/carts/:cid (Method: DELETE) --> Elimina un carrito por su ID
+- /api/carts/:cid/productos (Method: GET) --> Devuelve un carrito
+- /api/carts/:cid/productos (Method: POST) --> Agrega un producto a un carrito ya creado
+- /api/carts/:cid/:pid (Method: POST) --> Agrega una unidad a un producto previamente agregado a un carrito
+- /api/carts/:cid/productos/:pid (Method: DELETE) --> Elimina un producto de un carrito
+- /api/carts/new-operation (Method: POST) --> Gestiona la compra de los productos en el carrito
 
 ### USUARIOS
 #### Ubicación
-La base de datos fue realizada con MongoDB y alojada en la nube a través de Mongo Atlas.
+La base de datos local de usuarios fue hecha en mongo, en la DB "Tienda" y la colección "Usuarios".
+La base de datos cloud de usuarios fue hecha en Mongo Atlas, en la DB "Usuarios" y la colección "usuarios".
 
 #### Estructura de los objetos "usuarios"
  - Nombre
